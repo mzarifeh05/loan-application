@@ -58,7 +58,18 @@ label {
     user-select: none;
 }
 
-button {
+.button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 14px;
+    font-size: 1.2rem;
+    background: gray;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+}
+
+.submit-button {
     margin-top: 25px;
     width: 100%;
     padding: 14px;
@@ -72,7 +83,7 @@ button {
     font-weight: bold;
 }
 
-button:hover {
+.submit-button:hover {
     background: #1B3C53;
     transform: scale(1.03);
 }

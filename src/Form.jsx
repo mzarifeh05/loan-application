@@ -27,6 +27,14 @@ export default function Form() {
         setRequest({name: "", phone: "", age: "", employee: false, salary: "opt1"});
     }
 
+    function isValid() {
+        return (
+            request.name.trim() !== "" &&
+            request.phone.trim() !== "" &&
+            request.age !== null && request.age !== ""
+        );
+    }
+
     return (
         <>
             <div className="form">
@@ -93,7 +101,13 @@ export default function Form() {
                 <br />
                 <br />
 
-                <button onClick={handleSubmit}>Submit</button>
+                <button
+                    disabled={!isValid()}
+                    className={isValid() ? "submit-button" : "button"}
+                    onClick={handleSubmit}
+                >
+                    Submit
+                </button>
             </div>
             {status !== null && <Popup status={status} onClose={() => setStatus(null)} />}
         </>
