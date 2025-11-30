@@ -20,11 +20,11 @@ export default function Form() {
             && request.employee
             && request.salary !== "opt1") {
                 setStatus(true);
+                setRequest({name: "", phone: "", age: "", employee: false, salary: "opt1"});
             }
         else {
             setStatus(false);
         }
-        setRequest({name: "", phone: "", age: "", employee: false, salary: "opt1"});
     }
 
     function isValid() {
