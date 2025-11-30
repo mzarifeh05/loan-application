@@ -1,0 +1,133 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(115deg, #1B3C53, #234C6A, #456882);
+    padding: 20px;
+}
+
+.form {
+    background-color: #E3E3E3;
+    text-align: center;
+    padding: 50px 40px;
+    border-radius: 15px;
+    width: 420px;
+    box-shadow: 0px 8px 25px rgba(0,0,0,0.25);
+    border-top: 6px solid #234C6A;
+    animation: fadeIn 0.7s ease;
+    font-size: 1.1rem;
+}
+
+.form h1 {
+    margin-bottom: 20px;
+    color: #1B3C53;
+    letter-spacing: 1px;
+}
+
+.form input[type="text"],
+.form input[type="number"],
+.form select {
+    width: 70%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 8px;
+    border: 1px solid #bbb;
+    font-size: 1.1rem;
+    transition: 0.25s;
+}
+
+.form input:focus,
+.form select:focus {
+    border-color: #234C6A;
+    box-shadow: 0 0 8px rgba(35, 76, 106, 0.4);
+}
+
+#employee {
+    transform: scale(1.3);
+    margin-top: 10px;
+}
+label {
+    user-select: none;
+}
+
+button {
+    margin-top: 25px;
+    width: 100%;
+    padding: 14px;
+    font-size: 1.2rem;
+    background: #234C6A;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #1B3C53;
+    transform: scale(1.03);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+#cover {
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#cover .popup-accepted {
+    background-color: rgb(74, 194, 74);
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #E3E3E3;
+}
+
+#cover .popup-rejected {
+    background-color: rgb(230, 74, 74);
+    width: 400px;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: #E3E3E3;
+}
+
+@media (max-width: 450px) {
+    .form {
+        width: 100%;
+    }
+    .form input[type="text"],
+    .form input[type="number"],
+    .form select {
+        width: 100%;
+    }
+    .form h1 {
+        font-size: 25px;
+    }
+    #cover .popup-accepted,
+    #cover .popup-rejected {
+        width: 70%;
+        font-size: 0.9rem;
+    }
+}
