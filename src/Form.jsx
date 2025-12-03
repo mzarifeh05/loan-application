@@ -1,13 +1,13 @@
 import "./App.css"
 import Popup from "./Popup";
 import { useState } from "react";
-
+import InputComp from "./InputComp";
 
 export default function Form() {
     const [request, setRequest] = useState({
         name: "",
         phone: "",
-        age: null,
+        age: "",
         employee: false,
         salary: "opt1",
     });
@@ -35,43 +35,31 @@ export default function Form() {
         );
     }
 
+    function hanldeNameChange(value) {
+        setRequest(prev => ({...prev, name: value}))
+    }
+
+    function hanldePhoneChange(value) {
+        setRequest(prev => ({...prev, phone: value}))
+    }
+
+    function hanldeAgeChange(value) {
+        setRequest(prev => ({...prev, age: value}))
+    }
+
     return (
         <>
             <div className="form">
                 <h1>Requesting a Loan</h1>
                 <hr /><br />
 
-                <label htmlFor="name">Name: </label>
-                <input
-                value={request.name}
-                type="text"
-                id="name"
-                onChange={(e) =>
-                    setRequest((prev) => ({ ...prev, name: e.target.value }))
-                }
-                />
+                <InputComp title="Name: " value={request.name} handleChange={hanldeNameChange} />
                 <br />
 
-                <label htmlFor="phone">Phone: </label>
-                <input
-                value={request.phone}
-                type="text"
-                id="phone"
-                onChange={(e) =>
-                    setRequest((prev) => ({ ...prev, phone: e.target.value }))
-                }
-                />
+                <InputComp title="Phone: " value={request.phone} handleChange={hanldePhoneChange} />
                 <br />
 
-                <label htmlFor="age">Age: </label>
-                <input
-                value={request.age}
-                type="number"
-                id="age"
-                onChange={(e) =>
-                    setRequest((prev) => ({ ...prev, age: Number(e.target.value) }))
-                }
-                />
+                <InputComp title="Age: " value={request.age} handleChange={hanldeAgeChange} />
                 <br />
 
                 <input
